@@ -18,24 +18,24 @@ $comments = $_POST['comments'];
 $verify   = $_POST['verify'];
 
 if(trim($name) == '') {
-	echo '<div class="error_message">You must enter your name.</div>';
+	echo '<div class="error_message">Introduza o seu nome.</div>';
 	exit();
 } else if(trim($email) == '') {
-	echo '<div class="error_message">Please enter a valid email address.</div>';
+	echo '<div class="error_message">Introduza um endereço de email válido.</div>';
 	exit();
 } else if(trim($phone) == '') {
-	echo '<div class="error_message">Please enter a valid phone number.</div>';
+	echo '<div class="error_message">Introduza um nº de telefone válido.</div>';
 	exit();
 } else if(!is_numeric($phone)) {
-	echo '<div class="error_message">Phone number can only contain digits.</div>';
+	echo '<div class="error_message">O nº de telefone só pode conter digitos.</div>';
 	exit();
 } else if(!isEmail($email)) {
-	echo '<div class="error_message">You have entered an invalid e-mail address, try again.</div>';
+	echo '<div class="error_message">Introduziu um endereço de email inválido. Tente novamente.</div>';
 	exit();
 }
 
 if(trim($comments) == '') {
-	echo '<div class="error_message">Please enter your message.</div>';
+	echo '<div class="error_message">Introduza a sua mensagem.</div>';
 	exit();
 }
 
@@ -82,7 +82,7 @@ if(mail($address, $e_subject, $msg, $headers)) {
 
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
-	echo "<h4 class='highlight'>Thank you <strong>$name</strong>, your message has been submitted sucessfully.</h4>";
+	echo "<h4 class='highlight'>Obrigado <strong>$name</strong>, a sua mensagem foi submetida com sucesso.</h4>";
 	echo "</div>";
 	echo "</fieldset>";
 
